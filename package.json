@@ -19,5 +19,20 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/gazzimon/mindhiro/issues"
+  },
+  "homepage": "https://github.com/gazzimon/mindhiro#readme",
+  "description": "Multiplatform experience",
+  "main": "app.js",
+  "keywords": [
+    "Realidad",
+    "aumentada",
+    "RA",
+    "javascript",
+    "AR.JS"
+  ],
+  "author": "Azzimonti Renzo Gustavo",
+  "license": "ISC"
 }
