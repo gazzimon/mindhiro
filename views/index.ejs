@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
     <title>Pregunt.ar</title>
-    <link rel="stylesheet" href="style.css" />
     <!-- we import arjs version-->
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
@@ -112,11 +113,10 @@
       <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;' style="display: none">
         <div id="question" style="font-size: xx-large;"></div>
       </div>
-        <div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 2;'>
+        <div style='position: absolute; bottom: 10px; left: 0; width: 100%; height: 5em; display: flex; justify-content: center; align-items: center; z-index: 10; padding: 5px;'>
             <button id="A" onclick="checkAnswer('A')" style="display: none"></button>
             <button id="B" onclick="checkAnswer('B')" style="display: none"></button>
             <button id="C" onclick="checkAnswer('C')" style="display: none"></button>
-            <p>'Tiempo: ' + counter</p>
        </div>
      <script src="javascripts/game.js"></script>
   </body>
