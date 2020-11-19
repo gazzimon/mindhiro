@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <%- include('header.ejs') %>
+
+  <form>
+    <fieldset>
+      <label for="question">Ingrese pregunta</label>
+      <textarea placeholder="¿De que color es el caballo de San Martin?" id="question"></textarea>
+      <label for="choiceA">Ingrese Respuesta A</label>
+      <textarea placeholder="Blanco" id="choiceA"></textarea>
+      <label for="choiceB">Ingrese Respuesta B</label>
+      <textarea placeholder="Verde" id="choiceB"></textarea>
+      <label for="choiceC">Ingrese Respuesta C</label>
+      <textarea placeholder="Negro" id="choiceC"></textarea>
+      <label for="choiceD">Ingrese Respuesta A</label>
+      <textarea placeholder="Marrón" id="choiceD"></textarea>
+      <label for="correct">Respuesta correcta</label>
+      <select id="correct">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+      </select>
+      <div class="float-right">
+        <input type="checkbox" id="confirmField" />
+        <label class="label-inline" for="confirmField">Enviar una copia al correo</label>
+      </div>
+      <input class="button-primary" type="submit" value="Guardar" />
+    </fieldset>
+  </form>
+
+</html>

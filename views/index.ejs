@@ -1,11 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pregunt.ar</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- we import arjs version-->
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="aframe-ar-ntf.js"></script>
+
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <!-- Milligram CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+
+    <script src="javascripts/event.js"></script>
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    
+<body>
+  
+    <a-scene
+      embedded
+      class="a-scene"
+      arjs="sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+      renderer="precision: high;"
+    >
+      <!-- handle hiro marker -->
+      <!-- 'registerevents' will register event listeners for the marker when it is found and lost,
+		as defined in the inline script above -->
+      <a-marker type="barcode" value="1" id="1" registerevents>
+        <a-box
+          position="0 0.5 0"
+          material="opacity: 0.5; side: double;color:blue;"
+        >
+          <a-torus-knot
+            radius="0.26"
+            radius-tubular="0.05"
+            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true"
+          >
+          </a-torus-knot>
+        </a-box>
+      </a-marker>
+
+        <a-marker type="barcode" value="2" id="2" registerevents>
+        <a-box
+          position="0 0.5 0"
+          material="opacity: 0.5; side: double;color:red;"
+        >
+          <a-torus-knot
+            radius="0.26"
+            radius-tubular="0.05"
+            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true"
+          >
+          </a-torus-knot>
+        </a-box>
+      </a-marker>
+
+      <a-marker type="barcode" value="3" id="3" registerevents>
+        <a-box
+          position="0 0.5 0"
+          material="opacity: 0.5; side: double; color:green;"
+        >
+          <a-torus-knot
+            radius="0.26"
+            radius-tubular="0.05"
+            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true"
+          >
+          </a-torus-knot>
+        </a-box>
+      </a-marker>
+
+      <a-marker type="barcode" value="4" id="5" registerevents>
+        <a-box
+          position="0 0.5 0"
+          material="opacity: 0.5; side: double;color:blue;"
+        >
+          <a-torus-knot
+            radius="0.26"
+            radius-tubular="0.05"
+            animation="property: rotation; to:360 0 0; dur: 5000; easing: linear; loop: true"
+          >
+          </a-torus-knot>
+        </a-box>
+      </a-marker>
+      <!-- add a simple camera -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  
+
+      <div style='position: fixed; top: 1000px; width:100%; text-align: center; z-index: 1; display: inline;' id="start">
+        <h1>
+          Busca el marcador para iniciar el juego
+        </h1>
+      </div>
+      <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;' style="display: none">
+        <div id="question" style="font-size: xx-large;"></div>
+      </div>
+        <div style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 2;'>
+            <button id="A" onclick="checkAnswer('A')" style="display: none"></button>
+            <button id="B" onclick="checkAnswer('B')" style="display: none"></button>
+            <button id="C" onclick="checkAnswer('C')" style="display: none"></button>
+            <p>'Tiempo: ' + counter</p>
+       </div>
+     <script src="javascripts/game.js"></script>
   </body>
 </html>
