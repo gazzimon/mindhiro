@@ -13,29 +13,29 @@ const scoreDiv = document.getElementById("scoreContainer");
 
 
 // create our questions
-let questionnaire = [1,
+let questionnaire = [
   {
-    question: "¿Qué colores tiene la bandera de Paraguay",
+    question: "¿Probaría usted esta vacuna?",
     qImg: "https://cdn.glitch.com/e593a5a8-2021-42a1-a662-cb2f88bef2fd%2FimgA.jpg?v=1605366737512",
-    choiceA: "Azul, Blanca y Roja",
-    choiceB: "Roja, Blanca y Roja",
-    choiceC: "Verde, Blanca y Roja",
+    choiceA: "Si",
+    choiceB: "No",
+    choiceC: "Si, pero no ahora",
     correct: "A"
   },
   {
-    question: "¿Cuál es la capital de Uruguay",
+    question: "¿El VAR es una herramienta segura?",
     qImg: "https://cdn.glitch.com/e593a5a8-2021-42a1-a662-cb2f88bef2fd%2FimgB.jpg?v=1605366737547",
-    choiceA: "Santiago",
-    choiceB: "Montevideo",
-    choiceC: "Rosario",
+    choiceA: "Si",
+    choiceB: "No",
+    choiceC: "Los arbitros son una mafia",
     correct: "B"
   },
   {
-    question: "No hay mal, que por bien ...",
+    question: "Who will be the next U.S. president?",
     qImg: "https://cdn.glitch.com/e593a5a8-2021-42a1-a662-cb2f88bef2fd%2FimgC.jpg?v=1605366737075",
-    choiceA: "no se le miren los dientes",
-    choiceB: "dejala correr",
-    choiceC: "no venga",
+    choiceA: "Biden",
+    choiceB: "Trump",
+    choiceC: "Who cares?",
     correct: "C"
   }
 ];
@@ -57,6 +57,7 @@ function renderQuestion() {
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
+
 }
 
 
@@ -71,7 +72,6 @@ function startQuiz() {
   quiz.style.display = "block";
   renderCounter();
   TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
-}
 
 // counter render
 
