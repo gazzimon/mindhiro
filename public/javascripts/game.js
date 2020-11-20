@@ -11,7 +11,6 @@ const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
 
 
-
 // create our questions
 let questionnaire = [
   {
@@ -57,7 +56,6 @@ function renderQuestion() {
   choiceA.innerHTML = q.choiceA;
   choiceB.innerHTML = q.choiceB;
   choiceC.innerHTML = q.choiceC;
-
 }
 
 
@@ -72,6 +70,7 @@ function startQuiz() {
   quiz.style.display = "block";
   renderCounter();
   TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
+}
 
 // counter render
 
