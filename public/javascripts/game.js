@@ -42,7 +42,7 @@ let questionnaire = [
 
 const lastQuestion = questionnaire.length - 1;
 let runningQuestion = 0;
-let count = 0;
+let count = null;
 const questionTime = 10; // 10s
 const gaugeWidth = 150; // 150px
 const gaugeUnit = gaugeWidth / questionTime;
@@ -76,8 +76,7 @@ function startQuiz() {
 
 function renderCounter(){
   if(count <= questionTime){
-      counter.innerHTML = count;
-      count++
+      count++;
   }else{
       count = 0;
 
